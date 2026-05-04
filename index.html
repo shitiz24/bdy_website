@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Mute Button -->
+  <button id="mute-btn" class="hidden">
+    <svg id="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+    <svg id="icon-mute" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+  </button>
+
+  <!-- 1. Intro Screen -->
+  <section id="s-intro" class="screen active">
+    <div class="content">
+      <p class="fade-text">This isn't just a birthday wish...</p>
+      <button class="btn" id="btn-start">Tap to continue</button>
+    </div>
+  </section>
+
+  <!-- 2. Story Sequence -->
+  <section id="s-story" class="screen">
+    <div class="content">
+      <p id="story-text" class="story-text"></p>
+      <button class="btn hidden" id="btn-play-it">Play it</button>
+    </div>
+  </section>
+
+  <!-- 3. Game Section -->
+  <section id="s-game" class="screen">
+    <div class="game-container">
+      <div id="game-ui">
+        <span id="score-display">0</span>
+        <div id="game-message">Tap to fly</div>
+      </div>
+      <canvas id="gameCanvas"></canvas>
+      
+      <div id="game-over-modal" class="hidden">
+        <h2 id="modal-title">Okay... that was just a game.</h2>
+        <p id="modal-desc"></p>
+        <div class="modal-buttons">
+          <button class="btn" id="btn-play-again">Play again</button>
+          <button class="btn" id="btn-continue">Continue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Photo Reveal Section -->
+  <section id="s-photos" class="screen">
+    <div class="content photo-grid">
+      <div class="photo-card" id="p1"><img src="assets/photo1.jpg" alt="Memory"></div>
+      <div class="photo-card" id="p2"><img src="assets/photo2.jpg" alt="Memory"></div>
+      <div class="photo-card" id="p3"><img src="assets/photo3.jpg" alt="Memory"></div>
+      <button class="btn" id="btn-transition">Continue</button>
+    </div>
+  </section>
+
+  <!-- 5. Emotional Transition -->
+  <section id="s-transition" class="screen">
+    <div class="content">
+      <p id="transition-text" class="fade-text"></p>
+    </div>
+  </section>
+
+  <!-- 6. Final Screen -->
+  <section id="s-final" class="screen">
+    <div class="content final-content">
+      <h1>Happy Birthday Aaru 🎂</h1>
+      <p>You make things feel different... in the best way.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
